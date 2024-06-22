@@ -1,0 +1,105 @@
+        @import "../../responsive.scss";
+        nav{
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            a{
+                transition: all 0.3s ease;
+                &:hover{
+                scale: 1.1;
+                }
+                @include sm{
+                    display: none;
+                }
+            }
+            .left{
+            flex: 3 ;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            .logo{
+                font-weight: bold;
+                font-size: 20px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                img{
+                    width: 30px;
+                }
+                span{
+                    @include md{
+                        display: none;
+                    } 
+                    @include sm{
+                        display: initial;
+                    }
+                
+                    
+                }
+            }
+            }
+            .right{
+                flex: 2;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            a{
+                padding: 12px 24px;
+            }
+                .register{
+                background-color: #fece51; 
+                border-radius: 25px;   
+                }
+                .menuIcon{
+                    display: none;
+                    z-index: 5; 
+                    img{
+                        width: 36px;
+                        height: 36px;
+                        cursor: pointer;
+                    }
+                    @include sm{
+                        display: inline;
+                    }
+                }
+                .menu{
+                    position: absolute;
+                    top:0;
+                    right:-50%;
+                    background-color: black;
+                    color:white;
+                    height:100vh;
+                    width:50%;
+                    transition: all .7s ease;
+                    flex-direction: column; 
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                    // overflow: hidden;
+                    &.active{
+                        right:0;
+                    }
+                    @include sm{
+                        
+                        a {
+                    
+                        display: initial;
+                        color: white;
+                        cursor: pointer;  
+                        
+                        }
+                    }
+                
+
+                
+                }
+                
+            }
+        }
